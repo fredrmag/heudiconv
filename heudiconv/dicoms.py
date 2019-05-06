@@ -91,8 +91,8 @@ def group_dicoms_into_seqinfos(files, file_filter, dcmfilter, grouping):
                 if studyUID is None:
                     studyUID = file_studyUID
                 elif not per_accession_number:
-					if studyUID == file_studyUID:
-						lgr.warning("Conflicting study identifiers found [{}, {}].".format(studyUID, file_studyUID))
+			if studyUID == file_studyUID:
+				lgr.warning("Conflicting study identifiers found [{}, {}].".format(studyUID, file_studyUID))
         except AttributeError as exc:
             lgr.warning('Ignoring %s since not quite a "normal" DICOM: %s',
                         filename, exc)
